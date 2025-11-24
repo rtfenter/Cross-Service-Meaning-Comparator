@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Cross-Service Meaning Comparator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="page-header">
+    <div class="page-header-inner">
+      <h1>Cross-Service Meaning Comparator</h1>
+      <p class="tagline">
+        Compare how services define and use shared fields to catch semantic drift before it breaks integrations.
+      </p>
+    </div>
+  </header>
+
+  <main class="main">
+    <!-- LEFT PANEL: CONTROLS + SUMMARY -->
+    <section class="panel panel-controls">
+      <div class="panel-header">
+        <h2>Field &amp; Alignment Summary</h2>
+      </div>
+
+      <div class="field">
+        <label for="field-select">Field</label>
+        <select id="field-select" class="select">
+          <!-- Options injected by app.js -->
+        </select>
+      </div>
+
+      <p id="field-description" class="concept-description">
+        Select a field to compare how each service defines, constrains, and uses it.
+      </p>
+
+      <div id="summary" class="summary">
+        <div id="summary-badge" class="summary-badge summary-badge-idle">
+          No field selected yet.
+        </div>
+      </div>
+
+      <div class="legend">
+        <h3>Alignment Legend</h3>
+        <ul>
+          <li>
+            <span class="legend-dot legend-low"></span>
+            Low drift – semantics mostly aligned
+          </li>
+          <li>
+            <span class="legend-dot legend-medium"></span>
+            Medium drift – noticeable differences in rules or usage
+          </li>
+          <li>
+            <span class="legend-dot legend-high"></span>
+            High drift – meaning significantly diverged
+          </li>
+        </ul>
+      </div>
+
+      <div class="notes-card">
+        <h3>How to Read This Comparator</h3>
+        <p>
+          Each column is a service (plus the canonical definition). Rows show description,
+          type, enums, invariants, and example values.
+        </p>
+        <p>
+          Colors indicate drift severity per service. Use the mismatch summary to decide
+          where contracts, docs, or implementations need to be realigned.
+        </p>
+      </div>
+    </section>
+
+    <!-- RIGHT PANEL: COMPARISON + DETAILS -->
+    <section class="panel panel-map">
+      <div class="panel-header">
+        <h2>Service Comparison</h2>
+      </div>
+
+      <div id="comparison-container" class="comparison-container">
+        <p class="map-empty">
+          Select a field on the left to render the cross-service comparison.
+        </p>
+      </div>
+
+      <div id="details-card" class="details-card">
+        <h3>Mismatch Summary</h3>
+        <p class="details-empty">
+          When you select a field, this section will summarize type, enum, and invariant
+          differences across services.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="page-footer">
+    <p>
+      Part of the
+      <a href="https://github.com/rtfenter/Systems-of-Trust-Series" target="_blank" rel="noreferrer">
+        Systems of Trust Series
+      </a>.
+    </p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
