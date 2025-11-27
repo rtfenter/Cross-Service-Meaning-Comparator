@@ -34,7 +34,7 @@ This comparator surfaces those differences side-by-side before they become produ
 
 ## Features (MVP)
 
-The first version will include:
+This prototype includes:
 
 - **Service-to-Service Field Comparison** – pick a field and compare how each service defines, uses, and constrains it  
 - **Definition & Example Diff View** – show description, example values, and notes per service in a compact comparison layout  
