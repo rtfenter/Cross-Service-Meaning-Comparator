@@ -50,12 +50,11 @@ This tool is intentionally minimal and aimed at conceptual clarity, not a full m
 ## Demo Screenshot
 <img width="2804" height="2404" alt="Screenshot 2025-11-24 at 08-22-40 Cross-Service Meaning Comparator" src="https://github.com/user-attachments/assets/7699fa13-de1f-422c-9903-efd169f0eb26" />
 
-
-
 ---
 
-## Cross-Service Meaning Flow Diagram
+## Meaning Comparison Flow Diagram
 
+```
     Shared Concept (Canonical Definition)
          |
          v
@@ -79,6 +78,7 @@ This tool is intentionally minimal and aimed at conceptual clarity, not a full m
          v
     Downstream Consumers
     (joins, analytics, audits, external APIs)
+```
 
 The comparator sits *between* these services, showing where their meanings align — and where they don’t.
 
@@ -154,7 +154,6 @@ MVP is implemented and active.
 The first version will focus on **clear side-by-side comparison** for a small set of fields and services — enough to demonstrate cross-service semantic drift without becoming a full governance platform.
 
 ---
-
 ## Local Use
 
 Everything will run client-side.
